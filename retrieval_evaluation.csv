@@ -1,0 +1,11 @@
+question,expected_section,top_1_section,top_5_sections,retrieved_correctly
+What is a Python list?,5.1. More on Lists,5.1. More on Lists,5.1. More on Lists | 5.5. Dictionaries | 3.1.3. Lists | 3. An Informal Introduction to Python | ,True
+How does a for loop work in Python?,4.2. for Statements,9.8. Iterators,9.8. Iterators | 4.2. for Statements | 5.1.3. List Comprehensions | 3.2. First Steps Towards Programming | 5.6. Looping Techniques,True
+What is a Python dictionary?,5.5. Dictionaries,5.5. Dictionaries,5.5. Dictionaries | 13. What Now? |  | 1. Whetting Your Appetite | 3. An Informal Introduction to Python,True
+How do you handle exceptions in Python?,8.3. Handling Exceptions,8.3. Handling Exceptions,8.3. Handling Exceptions | 8.3. Handling Exceptions | 8.6. User-defined Exceptions | 8.3. Handling Exceptions | 8.3. Handling Exceptions,True
+What is a Python class?,9. Classes,9. Classes,9. Classes | 9.3.2. Class Objects | 9.2. Python Scopes and Namespaces | 9.3.5. Class and Instance Variables | 1. Whetting Your Appetite,True
+How do you define a function in Python?,4.7. Defining Functions,4.8.3. Special parameters,4.8.3. Special parameters | 4.7. Defining Functions | 9.3.4. Method Objects | 4.7. Defining Functions | 4.8.1. Default Argument Values,True
+How can you read and write files in Python?,7.2. Reading and Writing Files,7.2.1. Methods of File Objects,7.2.1. Methods of File Objects | 7.2. Reading and Writing Files | 7.2.2. Saving structured data with json | 7.2.2. Saving structured data with json | 7.2.1. Methods of File Objects,True
+What are list comprehensions in Python?,5.1.3. List Comprehensions,5.1.3. List Comprehensions,5.1.3. List Comprehensions | 5.5. Dictionaries | 3.1.3. Lists | 5.1. More on Lists | 5.1.4. Nested List Comprehensions,True
+What is a virtual environment in Python?,12.2. Creating Virtual Environments,12.2. Creating Virtual Environments,12.2. Creating Virtual Environments | 12.2. Creating Virtual Environments | 12. Virtual Environments and Packages | 1. Whetting Your Appetite | 12. Virtual Environments and Packages,True
+How does Python import modules?,6.1. More on Modules,6.1.2. The Module Search Path,6.1.2. The Module Search Path | 6.1. More on Modules | 6.4.1. Importing * From a Package | 6.4. Packages | 6.2. Standard Modules,True
