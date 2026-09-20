@@ -1,4 +1,4 @@
-\# Python RAG Document Assistant
+﻿\# Python RAG Document Assistant
 
 
 
@@ -392,7 +392,7 @@ The project uses:
 
 
 
-\*\*Sentence Transformers — `all-MiniLM-L6-v2`\*\*
+\*\*Sentence Transformers â€” `all-MiniLM-L6-v2`\*\*
 
 
 
@@ -616,43 +616,43 @@ The backend is implemented using \*\*FastAPI\*\*.
 
 backend/
 
-├── app/
+â”œâ”€â”€ app/
 
-│   ├── main.py
+â”‚   â”œâ”€â”€ main.py
 
-│   ├── api/
+â”‚   â”œâ”€â”€ api/
 
-│   │   └── routes/
+â”‚   â”‚   â””â”€â”€ routes/
 
-│   │       └── query.py
+â”‚   â”‚       â””â”€â”€ query.py
 
-│   ├── core/
+â”‚   â”œâ”€â”€ core/
 
-│   │   └── config.py
+â”‚   â”‚   â””â”€â”€ config.py
 
-│   ├── schemas/
+â”‚   â”œâ”€â”€ schemas/
 
-│   │   └── query.py
+â”‚   â”‚   â””â”€â”€ query.py
 
-│   ├── services/
+â”‚   â”œâ”€â”€ services/
 
-│   │   ├── retrieval.py
+â”‚   â”‚   â”œâ”€â”€ retrieval.py
 
-│   │   └── generation.py
+â”‚   â”‚   â””â”€â”€ generation.py
 
-│   └── utils/
+â”‚   â””â”€â”€ utils/
 
-├── data/
+â”œâ”€â”€ data/
 
-│   └── vector\_store/
+â”‚   â””â”€â”€ vector\_store/
 
-│       └── chroma\_db\_v2/
+â”‚       â””â”€â”€ chroma\_db\_v2/
 
-├── tests/
+â”œâ”€â”€ tests/
 
-│   └── test\_api.py
+â”‚   â””â”€â”€ test\_api.py
 
-└── requirements.txt
+â””â”€â”€ requirements.txt
 
 ```
 
@@ -784,11 +784,11 @@ The frontend communicates with the FastAPI backend through `api\_client.py`.
 
 frontend/
 
-├── app.py
+â”œâ”€â”€ app.py
 
-├── api\_client.py
+â”œâ”€â”€ api\_client.py
 
-└── requirements.txt
+â””â”€â”€ requirements.txt
 
 ```
 
@@ -806,89 +806,89 @@ frontend/
 
 ITI RAG\_Project/
 
-│
+â”‚
 
-├── backend/
+â”œâ”€â”€ backend/
 
-│   ├── app/
+â”‚   â”œâ”€â”€ app/
 
-│   │   ├── main.py
+â”‚   â”‚   â”œâ”€â”€ main.py
 
-│   │   ├── api/
+â”‚   â”‚   â”œâ”€â”€ api/
 
-│   │   │   └── routes/
+â”‚   â”‚   â”‚   â””â”€â”€ routes/
 
-│   │   │       ├── query.py
+â”‚   â”‚   â”‚       â”œâ”€â”€ query.py
 
-│   │   │       └── \_\_init\_\_.py
+â”‚   â”‚   â”‚       â””â”€â”€ \_\_init\_\_.py
 
-│   │   ├── core/
+â”‚   â”‚   â”œâ”€â”€ core/
 
-│   │   │   └── config.py
+â”‚   â”‚   â”‚   â””â”€â”€ config.py
 
-│   │   ├── schemas/
+â”‚   â”‚   â”œâ”€â”€ schemas/
 
-│   │   │   └── query.py
+â”‚   â”‚   â”‚   â””â”€â”€ query.py
 
-│   │   ├── services/
+â”‚   â”‚   â”œâ”€â”€ services/
 
-│   │   │   ├── retrieval.py
+â”‚   â”‚   â”‚   â”œâ”€â”€ retrieval.py
 
-│   │   │   └── generation.py
+â”‚   â”‚   â”‚   â””â”€â”€ generation.py
 
-│   │   └── utils/
+â”‚   â”‚   â””â”€â”€ utils/
 
-│   ├── data/
+â”‚   â”œâ”€â”€ data/
 
-│   │   └── vector\_store/
+â”‚   â”‚   â””â”€â”€ vector\_store/
 
-│   │       └── chroma\_db\_v2/
+â”‚   â”‚       â””â”€â”€ chroma\_db\_v2/
 
-│   ├── tests/
+â”‚   â”œâ”€â”€ tests/
 
-│   │   └── test\_api.py
+â”‚   â”‚   â””â”€â”€ test\_api.py
 
-│   └── requirements.txt
+â”‚   â””â”€â”€ requirements.txt
 
-│
+â”‚
 
-├── frontend/
+â”œâ”€â”€ frontend/
 
-│   ├── app.py
+â”‚   â”œâ”€â”€ app.py
 
-│   ├── api\_client.py
+â”‚   â”œâ”€â”€ api\_client.py
 
-│   └── requirements.txt
+â”‚   â””â”€â”€ requirements.txt
 
-│
+â”‚
 
-├── notebooks/
+â”œâ”€â”€ notebooks/
 
-│   └── rag\_pipeline.ipynb
+â”‚   â””â”€â”€ rag\_pipeline.ipynb
 
-│
+â”‚
 
-├── evaluation/
+â”œâ”€â”€ evaluation/
 
-│
+â”‚
 
-├── ITI\_Final\_pro\_RAG.ipynb
+â”œâ”€â”€ ITI\_Final\_pro\_RAG.ipynb
 
-├── rag\_config.json
+â”œâ”€â”€ rag\_config.json
 
-├── retrieval\_evaluation.csv
+â”œâ”€â”€ retrieval\_evaluation.csv
 
-├── chroma\_db\_v2.zip
+â”œâ”€â”€ chroma\_db\_v2.zip
 
-├── test\_local\_retrieval.py
+â”œâ”€â”€ test\_local\_retrieval.py
 
-├── test\_rag\_generation.py
+â”œâ”€â”€ test\_rag\_generation.py
 
-├── .env.example
+â”œâ”€â”€ .env.example
 
-├── .gitignore
+â”œâ”€â”€ .gitignore
 
-└── README.md
+â””â”€â”€ README.md
 
 ```
 
@@ -1534,75 +1534,23 @@ The notebook includes:
 
 \## 23. Screenshots
 
+The frontend was tested with multiple Python questions using the Streamlit interface.
 
+### Main Interface
+![Main Interface](screenshots/main.png)
 
-The project frontend was tested using multiple Python questions.
+### Retrieval / RAG Example
+![RAG Example](screenshots/iti_sc_1.png)
 
+### Question Example 2
+![Question Example 2](screenshots/2.png)
 
+### Question Example 3
+![Question Example 3](screenshots/3.png)
 
-Example questions include:
-
-
-
-\* What is a Python dictionary?
-
-\* How does a for loop work in Python?
-
-\* What is a Python class?
-
-\* How do you handle exceptions?
-
-\* How do you define a function?
-
-
-
-Screenshots demonstrate:
-
-
-
-\* Streamlit interface
-
-\* User questions
-
-\* Generated answers
-
-\* Retrieved source documents
-
-\* Source-grounded responses
-
-
-
-Add the final screenshots to the repository and reference them here.
-
-
-
-Example:
-
-
-
-```text
-
-screenshots/
-
-├── home.png
-
-├── question-dictionary.png
-
-├── question-for-loop.png
-
-├── question-classes.png
-
-└── question-functions.png
-
-```
-
-
-
-\---
-
-
-
-\## 24. Error Handling
+### Question Example 4
+![Question Example 4](screenshots/4.png)
+## 24. Error Handling
 
 
 
@@ -1778,7 +1726,7 @@ The system combines:
 
 
 
-\*\*Document Processing → Chunking → Embeddings → Vector Search → Context Retrieval → Local LLM Generation → Source-Grounded Answer\*\*
+\*\*Document Processing â†’ Chunking â†’ Embeddings â†’ Vector Search â†’ Context Retrieval â†’ Local LLM Generation â†’ Source-Grounded Answer\*\*
 
 
 
@@ -1811,6 +1759,7 @@ The implementation provides a practical document assistant that can answer Pytho
 
 
 \*\*Retrieval Evaluation:\*\* 100% Top-5 accuracy on 10 evaluation questions
+
 
 
 
