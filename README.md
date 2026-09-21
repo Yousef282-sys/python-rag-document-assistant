@@ -1,4 +1,4 @@
-﻿\# Python RAG Document Assistant
+# Python RAG Document Assistant
 
 
 
@@ -10,15 +10,15 @@ The system retrieves relevant sections from the Python documentation and uses a 
 
 
 
-\---
+---
 
 
 
-\## 1. Project Overview
+## 1. Project Overview
 
 
 
-This project was developed as an \*\*ITI Level 2 Summer Training Graduation Project\*\*.
+This project was developed as an **ITI Level 2 Summer Training Graduation Project**.
 
 
 
@@ -30,35 +30,35 @@ Instead of allowing the language model to answer only from its general knowledge
 
 
 
-1\. Receives a user question.
+1. Receives a user question.
 
-2\. Converts the question into an embedding.
+2. Converts the question into an embedding.
 
-3\. Searches the persisted vector database.
+3. Searches the persisted vector database.
 
-4\. Retrieves the most relevant documentation chunks.
+4. Retrieves the most relevant documentation chunks.
 
-5\. Sends the retrieved context to the local LLM.
+5. Sends the retrieved context to the local LLM.
 
-6\. Generates an answer grounded in the retrieved documentation.
+6. Generates an answer grounded in the retrieved documentation.
 
-7\. Returns the answer together with the source documents.
-
-
-
-\### Domain
+7. Returns the answer together with the source documents.
 
 
 
-\*\*Python Programming\*\*
+### Domain
 
 
 
-\### Knowledge Source
+**Python Programming**
 
 
 
-\*\*Official Python 3.10 Tutorial\*\*
+### Knowledge Source
+
+
+
+**Official Python 3.10 Tutorial**
 
 
 
@@ -66,183 +66,183 @@ The corpus contains 17 HTML documents covering Python programming topics such as
 
 
 
-\* Introduction to Python
+* Introduction to Python
 
-\* Control flow
+* Control flow
 
-\* Data structures
+* Data structures
 
-\* Functions
+* Functions
 
-\* Modules
+* Modules
 
-\* File input/output
+* File input/output
 
-\* Errors and exceptions
+* Errors and exceptions
 
-\* Classes
+* Classes
 
-\* The Python interpreter
+* The Python interpreter
 
-\* Virtual environments
+* Virtual environments
 
-\* Standard library topics
-
-
-
-\---
+* Standard library topics
 
 
 
-\## 2. Main Features
+---
 
 
 
-\* HTML document loading and cleaning
-
-\* Section-aware document chunking
-
-\* Semantic embeddings
-
-\* Persistent ChromaDB vector store
-
-\* Top-k semantic retrieval
-
-\* Retrieval-Augmented Generation
-
-\* Local LLM inference using Ollama
-
-\* Source-grounded answers
-
-\* FastAPI backend
-
-\* Streamlit frontend
-
-\* API validation and error handling
-
-\* Automated backend tests
-
-\* Retrieval evaluation using 10 questions
-
-\* Exported RAG configuration
-
-\* Persisted vector database
+## 2. Main Features
 
 
 
-\---
+* HTML document loading and cleaning
+
+* Section-aware document chunking
+
+* Semantic embeddings
+
+* Persistent ChromaDB vector store
+
+* Top-k semantic retrieval
+
+* Retrieval-Augmented Generation
+
+* Local LLM inference using Ollama
+
+* Source-grounded answers
+
+* FastAPI backend
+
+* Streamlit frontend
+
+* API validation and error handling
+
+* Automated backend tests
+
+* Retrieval evaluation using 10 questions
+
+* Exported RAG configuration
+
+* Persisted vector database
 
 
 
-\## 3. Architecture
+---
+
+
+
+## 3. Architecture
 
 
 
 ```text
 
-&#x20;                   +----------------------+
+                    +----------------------+
 
-&#x20;                   |        User          |
+                    |        User          |
 
-&#x20;                   +----------+-----------+
+                    +----------+-----------+
 
-&#x20;                              |
+                               |
 
-&#x20;                              v
+                               v
 
-&#x20;                   +----------------------+
+                    +----------------------+
 
-&#x20;                   | Streamlit Frontend   |
+                    | Streamlit Frontend   |
 
-&#x20;                   |      app.py          |
+                    |      app.py          |
 
-&#x20;                   +----------+-----------+
+                    +----------+-----------+
 
-&#x20;                              |
+                               |
 
-&#x20;                              | HTTP POST /query
+                               | HTTP POST /query
 
-&#x20;                              v
+                               v
 
-&#x20;                   +----------------------+
+                    +----------------------+
 
-&#x20;                   |    FastAPI Backend   |
+                    |    FastAPI Backend   |
 
-&#x20;                   +----------+-----------+
+                    +----------+-----------+
 
-&#x20;                              |
+                               |
 
-&#x20;                              v
+                               v
 
-&#x20;                   +----------------------+
+                    +----------------------+
 
-&#x20;                   |     Retrieval        |
+                    |     Retrieval        |
 
-&#x20;                   | Sentence Transformers|
+                    | Sentence Transformers|
 
-&#x20;                   +----------+-----------+
+                    +----------+-----------+
 
-&#x20;                              |
+                               |
 
-&#x20;                              v
+                               v
 
-&#x20;                   +----------------------+
+                    +----------------------+
 
-&#x20;                   |      ChromaDB        |
+                    |      ChromaDB        |
 
-&#x20;                   | Persistent Vector DB |
+                    | Persistent Vector DB |
 
-&#x20;                   +----------+-----------+
+                    +----------+-----------+
 
-&#x20;                              |
+                               |
 
-&#x20;                              | Top-k chunks
+                               | Top-k chunks
 
-&#x20;                              v
+                               v
 
-&#x20;                   +----------------------+
+                    +----------------------+
 
-&#x20;                   |  Retrieved Context   |
+                    |  Retrieved Context   |
 
-&#x20;                   +----------+-----------+
+                    +----------+-----------+
 
-&#x20;                              |
+                               |
 
-&#x20;                              v
+                               v
 
-&#x20;                   +----------------------+
+                    +----------------------+
 
-&#x20;                   |   Ollama / Qwen3     |
+                    |   Ollama / Qwen3     |
 
-&#x20;                   |      Local LLM       |
+                    |      Local LLM       |
 
-&#x20;                   +----------+-----------+
+                    +----------+-----------+
 
-&#x20;                              |
+                               |
 
-&#x20;                              v
+                               v
 
-&#x20;                   +----------------------+
+                    +----------------------+
 
-&#x20;                   | Grounded Answer +    |
+                    | Grounded Answer +    |
 
-&#x20;                   | Source References    |
+                    | Source References    |
 
-&#x20;                   +----------------------+
+                    +----------------------+
 
 ```
 
 
 
-\---
+---
 
 
 
-\## 4. RAG Pipeline
+## 4. RAG Pipeline
 
 
 
-\### Step 1: Document Loading
+### Step 1: Document Loading
 
 
 
@@ -258,17 +258,17 @@ Unnecessary elements such as:
 
 
 
-\* `script`
+* `script`
 
-\* `style`
+* `style`
 
-\* `nav`
+* `nav`
 
-\* `header`
+* `header`
 
-\* `footer`
+* `footer`
 
-\* `aside`
+* `aside`
 
 
 
@@ -276,11 +276,11 @@ are removed before extracting the useful documentation content.
 
 
 
-\---
+---
 
 
 
-\### Step 2: Text Cleaning
+### Step 2: Text Cleaning
 
 
 
@@ -288,33 +288,33 @@ The extracted text is cleaned by:
 
 
 
-\* Removing unnecessary whitespace
+* Removing unnecessary whitespace
 
-\* Removing empty lines
+* Removing empty lines
 
-\* Normalizing spacing
+* Normalizing spacing
 
-\* Preserving documentation structure
+* Preserving documentation structure
 
-\* Preserving section headings
+* Preserving section headings
 
-\* Preserving code examples
-
-
-
-The final corpus contains \*\*17 HTML documents\*\* and approximately \*\*260,000 characters\*\* of cleaned documentation text.
+* Preserving code examples
 
 
 
-\---
+The final corpus contains **17 HTML documents** and approximately **260,000 characters** of cleaned documentation text.
 
 
 
-\### Step 3: Chunking Strategy
+---
 
 
 
-A \*\*section-aware chunking strategy\*\* is used.
+### Step 3: Chunking Strategy
+
+
+
+A **section-aware chunking strategy** is used.
 
 
 
@@ -350,13 +350,13 @@ Section: 5.5. Dictionaries
 
 
 
-\[retrieved documentation content]
+[retrieved documentation content]
 
 ```
 
 
 
-\### Why Section-Aware Chunking?
+### Why Section-Aware Chunking?
 
 
 
@@ -368,11 +368,11 @@ Keeping section headings with the chunk helps the retrieval system preserve the 
 
 
 
-\* The topic
+* The topic
 
-\* The documentation section
+* The documentation section
 
-\* The actual explanation
+* The actual explanation
 
 
 
@@ -380,11 +380,11 @@ This improves source identification and makes retrieved context easier for the g
 
 
 
-\---
+---
 
 
 
-\## 5. Embeddings
+## 5. Embeddings
 
 
 
@@ -392,7 +392,7 @@ The project uses:
 
 
 
-\*\*Sentence Transformers â€” `all-MiniLM-L6-v2`\*\*
+**Sentence Transformers — `all-MiniLM-L6-v2`**
 
 
 
@@ -400,7 +400,7 @@ Embedding dimension:
 
 
 
-\*\*384\*\*
+**384**
 
 
 
@@ -412,11 +412,11 @@ The same embedding model is used for user questions during retrieval.
 
 
 
-\---
+---
 
 
 
-\## 6. Vector Database
+## 6. Vector Database
 
 
 
@@ -424,7 +424,7 @@ The project uses:
 
 
 
-\*\*ChromaDB\*\*
+**ChromaDB**
 
 
 
@@ -438,7 +438,7 @@ Collection name:
 
 ```text
 
-python\_tutorial\_v2
+python_tutorial_v2
 
 ```
 
@@ -448,11 +448,11 @@ Stored metadata includes:
 
 
 
-\* Source filename
+* Source filename
 
-\* Documentation section
+* Documentation section
 
-\* Chunk ID
+* Chunk ID
 
 
 
@@ -462,17 +462,17 @@ Vector store location:
 
 ```text
 
-backend/data/vector\_store/chroma\_db\_v2
+backend/data/vector_store/chroma_db_v2
 
 ```
 
 
 
-\---
+---
 
 
 
-\## 7. Retrieval
+## 7. Retrieval
 
 
 
@@ -480,15 +480,15 @@ For every user question:
 
 
 
-1\. The question is converted into an embedding.
+1. The question is converted into an embedding.
 
-2\. ChromaDB performs semantic similarity search.
+2. ChromaDB performs semantic similarity search.
 
-3\. The most relevant chunks are retrieved.
+3. The most relevant chunks are retrieved.
 
-4\. The retrieved chunks are combined into a context.
+4. The retrieved chunks are combined into a context.
 
-5\. The context is passed to the generation model.
+5. The context is passed to the generation model.
 
 
 
@@ -530,11 +530,11 @@ datastructures.html
 
 
 
-\---
+---
 
 
 
-\## 8. Generation
+## 8. Generation
 
 
 
@@ -542,7 +542,7 @@ The project uses:
 
 
 
-\*\*Qwen3 4B\*\*
+**Qwen3 4B**
 
 
 
@@ -550,7 +550,7 @@ The model runs locally through:
 
 
 
-\*\*Ollama\*\*
+**Ollama**
 
 
 
@@ -562,11 +562,11 @@ The application is designed to keep answers grounded in the retrieved documentat
 
 
 
-\---
+---
 
 
 
-\## 9. Source Grounding
+## 9. Source Grounding
 
 
 
@@ -578,13 +578,13 @@ The backend returns both:
 
 {
 
-&#x20; "answer": "Generated answer...",
+  "answer": "Generated answer...",
 
-&#x20; "sources": \[
+  "sources": [
 
-&#x20;   "datastructures.html"
+    "datastructures.html"
 
-&#x20; ]
+  ]
 
 }
 
@@ -596,19 +596,19 @@ This allows the user to see which documentation files were used to support the a
 
 
 
-\---
+---
 
 
 
-\## 10. Backend
+## 10. Backend
 
 
 
-The backend is implemented using \*\*FastAPI\*\*.
+The backend is implemented using **FastAPI**.
 
 
 
-\### Backend Structure
+### Backend Structure
 
 
 
@@ -616,53 +616,53 @@ The backend is implemented using \*\*FastAPI\*\*.
 
 backend/
 
-â”œâ”€â”€ app/
+├── app/
 
-â”‚   â”œâ”€â”€ main.py
+│   ├── main.py
 
-â”‚   â”œâ”€â”€ api/
+│   ├── api/
 
-â”‚   â”‚   â””â”€â”€ routes/
+│   │   └── routes/
 
-â”‚   â”‚       â””â”€â”€ query.py
+│   │       └── query.py
 
-â”‚   â”œâ”€â”€ core/
+│   ├── core/
 
-â”‚   â”‚   â””â”€â”€ config.py
+│   │   └── config.py
 
-â”‚   â”œâ”€â”€ schemas/
+│   ├── schemas/
 
-â”‚   â”‚   â””â”€â”€ query.py
+│   │   └── query.py
 
-â”‚   â”œâ”€â”€ services/
+│   ├── services/
 
-â”‚   â”‚   â”œâ”€â”€ retrieval.py
+│   │   ├── retrieval.py
 
-â”‚   â”‚   â””â”€â”€ generation.py
+│   │   └── generation.py
 
-â”‚   â””â”€â”€ utils/
+│   └── utils/
 
-â”œâ”€â”€ data/
+├── data/
 
-â”‚   â””â”€â”€ vector\_store/
+│   └── vector_store/
 
-â”‚       â””â”€â”€ chroma\_db\_v2/
+│       └── chroma_db_v2/
 
-â”œâ”€â”€ tests/
+├── tests/
 
-â”‚   â””â”€â”€ test\_api.py
+│   └── test_api.py
 
-â””â”€â”€ requirements.txt
+└── requirements.txt
 
 ```
 
 
 
-\### API Endpoints
+### API Endpoints
 
 
 
-\#### Health Check
+#### Health Check
 
 
 
@@ -682,7 +682,7 @@ Response:
 
 {
 
-&#x20; "status": "ok"
+  "status": "ok"
 
 }
 
@@ -690,7 +690,7 @@ Response:
 
 
 
-\#### Query
+#### Query
 
 
 
@@ -710,7 +710,7 @@ Request:
 
 {
 
-&#x20; "question": "What is a Python dictionary?"
+  "question": "What is a Python dictionary?"
 
 }
 
@@ -726,13 +726,13 @@ Response:
 
 {
 
-&#x20; "answer": "Generated answer based on the retrieved Python documentation.",
+  "answer": "Generated answer based on the retrieved Python documentation.",
 
-&#x20; "sources": \[
+  "sources": [
 
-&#x20;   "datastructures.html"
+    "datastructures.html"
 
-&#x20; ]
+  ]
 
 }
 
@@ -740,15 +740,15 @@ Response:
 
 
 
-\---
+---
 
 
 
-\## 11. Frontend
+## 11. Frontend
 
 
 
-The user interface is implemented using \*\*Streamlit\*\*.
+The user interface is implemented using **Streamlit**.
 
 
 
@@ -756,27 +756,27 @@ The frontend provides:
 
 
 
-\* Chat-style question interface
+* Chat-style question interface
 
-\* User question input
+* User question input
 
-\* Generated answer display
+* Generated answer display
 
-\* Source display
+* Source display
 
-\* Loading state
+* Loading state
 
-\* Error handling
+* Error handling
 
-\* Backend API communication
-
-
-
-The frontend communicates with the FastAPI backend through `api\_client.py`.
+* Backend API communication
 
 
 
-\### Frontend Structure
+The frontend communicates with the FastAPI backend through `api_client.py`.
+
+
+
+### Frontend Structure
 
 
 
@@ -784,121 +784,121 @@ The frontend communicates with the FastAPI backend through `api\_client.py`.
 
 frontend/
 
-â”œâ”€â”€ app.py
+├── app.py
 
-â”œâ”€â”€ api\_client.py
+├── api_client.py
 
-â””â”€â”€ requirements.txt
+└── requirements.txt
 
 ```
 
 
 
-\---
+---
 
 
 
-\## 12. Project Structure
+## 12. Project Structure
 
 
 
 ```text
 
-ITI RAG\_Project/
+ITI RAG_Project/
 
-â”‚
+│
 
-â”œâ”€â”€ backend/
+├── backend/
 
-â”‚   â”œâ”€â”€ app/
+│   ├── app/
 
-â”‚   â”‚   â”œâ”€â”€ main.py
+│   │   ├── main.py
 
-â”‚   â”‚   â”œâ”€â”€ api/
+│   │   ├── api/
 
-â”‚   â”‚   â”‚   â””â”€â”€ routes/
+│   │   │   └── routes/
 
-â”‚   â”‚   â”‚       â”œâ”€â”€ query.py
+│   │   │       ├── query.py
 
-â”‚   â”‚   â”‚       â””â”€â”€ \_\_init\_\_.py
+│   │   │       └── __init__.py
 
-â”‚   â”‚   â”œâ”€â”€ core/
+│   │   ├── core/
 
-â”‚   â”‚   â”‚   â””â”€â”€ config.py
+│   │   │   └── config.py
 
-â”‚   â”‚   â”œâ”€â”€ schemas/
+│   │   ├── schemas/
 
-â”‚   â”‚   â”‚   â””â”€â”€ query.py
+│   │   │   └── query.py
 
-â”‚   â”‚   â”œâ”€â”€ services/
+│   │   ├── services/
 
-â”‚   â”‚   â”‚   â”œâ”€â”€ retrieval.py
+│   │   │   ├── retrieval.py
 
-â”‚   â”‚   â”‚   â””â”€â”€ generation.py
+│   │   │   └── generation.py
 
-â”‚   â”‚   â””â”€â”€ utils/
+│   │   └── utils/
 
-â”‚   â”œâ”€â”€ data/
+│   ├── data/
 
-â”‚   â”‚   â””â”€â”€ vector\_store/
+│   │   └── vector_store/
 
-â”‚   â”‚       â””â”€â”€ chroma\_db\_v2/
+│   │       └── chroma_db_v2/
 
-â”‚   â”œâ”€â”€ tests/
+│   ├── tests/
 
-â”‚   â”‚   â””â”€â”€ test\_api.py
+│   │   └── test_api.py
 
-â”‚   â””â”€â”€ requirements.txt
+│   └── requirements.txt
 
-â”‚
+│
 
-â”œâ”€â”€ frontend/
+├── frontend/
 
-â”‚   â”œâ”€â”€ app.py
+│   ├── app.py
 
-â”‚   â”œâ”€â”€ api\_client.py
+│   ├── api_client.py
 
-â”‚   â””â”€â”€ requirements.txt
+│   └── requirements.txt
 
-â”‚
+│
 
-â”œâ”€â”€ notebooks/
+├── notebooks/
 
-â”‚   â””â”€â”€ rag\_pipeline.ipynb
+│   └── rag_pipeline.ipynb
 
-â”‚
+│
 
-â”œâ”€â”€ evaluation/
+├── evaluation/
 
-â”‚
+│
 
-â”œâ”€â”€ ITI\_Final\_pro\_RAG.ipynb
+├── ITI_Final_pro_RAG.ipynb
 
-â”œâ”€â”€ rag\_config.json
+├── rag_config.json
 
-â”œâ”€â”€ retrieval\_evaluation.csv
+├── retrieval_evaluation.csv
 
-â”œâ”€â”€ chroma\_db\_v2.zip
+├── chroma_db_v2.zip
 
-â”œâ”€â”€ test\_local\_retrieval.py
+├── test_local_retrieval.py
 
-â”œâ”€â”€ test\_rag\_generation.py
+├── test_rag_generation.py
 
-â”œâ”€â”€ .env.example
+├── .env.example
 
-â”œâ”€â”€ .gitignore
+├── .gitignore
 
-â””â”€â”€ README.md
+└── README.md
 
 ```
 
 
 
-\---
+---
 
 
 
-\## 13. Technologies Used
+## 13. Technologies Used
 
 
 
@@ -932,11 +932,11 @@ ITI RAG\_Project/
 
 
 
-\---
+---
 
 
 
-\## 14. Configuration
+## 14. Configuration
 
 
 
@@ -946,7 +946,7 @@ The project configuration is stored in:
 
 ```text
 
-rag\_config.json
+rag_config.json
 
 ```
 
@@ -972,7 +972,7 @@ ChromaDB
 
 Collection:
 
-python\_tutorial\_v2
+python_tutorial_v2
 
 
 
@@ -1014,11 +1014,11 @@ Official Python 3.10 Tutorial
 
 
 
-\---
+---
 
 
 
-\## 15. Environment Variables
+## 15. Environment Variables
 
 
 
@@ -1036,11 +1036,11 @@ Example configuration:
 
 ```text
 
-BACKEND\_URL=http://127.0.0.1:8000
+BACKEND_URL=http://127.0.0.1:8000
 
-OLLAMA\_URL=http://127.0.0.1:11434/api/chat
+OLLAMA_URL=http://127.0.0.1:11434/api/chat
 
-OLLAMA\_MODEL=qwen3:4b
+OLLAMA_MODEL=qwen3:4b
 
 ```
 
@@ -1058,15 +1058,15 @@ A template is provided in:
 
 
 
-\---
+---
 
 
 
-\## 16. Installation
+## 16. Installation
 
 
 
-\### Create Virtual Environment
+### Create Virtual Environment
 
 
 
@@ -1090,7 +1090,7 @@ Activate it:
 
 
 
-\### Install Backend Dependencies
+### Install Backend Dependencies
 
 
 
@@ -1102,7 +1102,7 @@ pip install -r backend/requirements.txt
 
 
 
-\### Install Frontend Dependencies
+### Install Frontend Dependencies
 
 
 
@@ -1114,7 +1114,7 @@ pip install -r frontend/requirements.txt
 
 
 
-\### Install Testing Dependency
+### Install Testing Dependency
 
 
 
@@ -1126,15 +1126,15 @@ pip install pytest
 
 
 
-\---
+---
 
 
 
-\## 17. Running the Project
+## 17. Running the Project
 
 
 
-\### Step 1: Start Ollama
+### Step 1: Start Ollama
 
 
 
@@ -1154,11 +1154,11 @@ qwen3:4b
 
 
 
-\---
+---
 
 
 
-\### Step 2: Start FastAPI
+### Step 2: Start FastAPI
 
 
 
@@ -1188,11 +1188,11 @@ http://127.0.0.1:8000
 
 
 
-\---
+---
 
 
 
-\### Step 3: Start Streamlit
+### Step 3: Start Streamlit
 
 
 
@@ -1202,7 +1202,7 @@ Configure the backend URL:
 
 ```powershell
 
-$env:BACKEND\_URL="http://127.0.0.1:8000"
+$env:BACKEND_URL="http://127.0.0.1:8000"
 
 ```
 
@@ -1220,15 +1220,15 @@ streamlit run frontend/app.py
 
 
 
-\---
+---
 
 
 
-\## 18. API Testing
+## 18. API Testing
 
 
 
-\### Health Check
+### Health Check
 
 
 
@@ -1248,7 +1248,7 @@ Expected response:
 
 {
 
-&#x20; "status": "ok"
+  "status": "ok"
 
 }
 
@@ -1256,7 +1256,7 @@ Expected response:
 
 
 
-\### Query Example
+### Query Example
 
 
 
@@ -1264,19 +1264,19 @@ Expected response:
 
 curl -X POST http://127.0.0.1:8000/query `
 
-&#x20; -H "Content-Type: application/json" `
+  -H "Content-Type: application/json" `
 
-&#x20; -d "{\\"question\\":\\"What is a Python dictionary?\\"}"
+  -d "{\\"question\\":\\"What is a Python dictionary?\\"}"
 
 ```
 
 
 
-\---
+---
 
 
 
-\## 19. Automated Tests
+## 19. Automated Tests
 
 
 
@@ -1284,7 +1284,7 @@ The backend includes two automated API tests.
 
 
 
-\### Test 1
+### Test 1
 
 
 
@@ -1300,7 +1300,7 @@ GET /health
 
 
 
-\### Test 2
+### Test 2
 
 
 
@@ -1320,15 +1320,15 @@ The tests verify:
 
 
 
-\* HTTP status
+* HTTP status
 
-\* Response structure
+* Response structure
 
-\* Answer existence
+* Answer existence
 
-\* Sources existence
+* Sources existence
 
-\* Sources returned as a list
+* Sources returned as a list
 
 
 
@@ -1340,7 +1340,7 @@ Run the tests:
 
 $env:PYTHONPATH="."
 
-pytest backend/tests/test\_api.py -v
+pytest backend/tests/test_api.py -v
 
 ```
 
@@ -1352,9 +1352,9 @@ Current result:
 
 ```text
 
-test\_health PASSED
+test_health PASSED
 
-test\_query  PASSED
+test_query  PASSED
 
 
 
@@ -1364,15 +1364,15 @@ test\_query  PASSED
 
 
 
-\---
+---
 
 
 
-\## 20. Retrieval Evaluation
+## 20. Retrieval Evaluation
 
 
 
-The retrieval pipeline was evaluated using \*\*10 questions\*\* covering different parts of the official Python tutorial.
+The retrieval pipeline was evaluated using **10 questions** covering different parts of the official Python tutorial.
 
 
 
@@ -1380,25 +1380,25 @@ Evaluation questions include:
 
 
 
-1\. What is a Python list?
+1. What is a Python list?
 
-2\. How does a for loop work in Python?
+2. How does a for loop work in Python?
 
-3\. What is a Python dictionary?
+3. What is a Python dictionary?
 
-4\. How do you handle exceptions in Python?
+4. How do you handle exceptions in Python?
 
-5\. What is a Python class?
+5. What is a Python class?
 
-6\. How do you define a function in Python?
+6. How do you define a function in Python?
 
-7\. How can you read and write files in Python?
+7. How can you read and write files in Python?
 
-8\. What are list comprehensions in Python?
+8. What are list comprehensions in Python?
 
-9\. What is a virtual environment in Python?
+9. What is a virtual environment in Python?
 
-10\. How does Python import modules?
+10. How does Python import modules?
 
 
 
@@ -1406,11 +1406,11 @@ The expected documentation sections were compared against the retrieved results.
 
 
 
-\### Retrieval Result
+### Retrieval Result
 
 
 
-\*\*Top-5 retrieval accuracy: 100%\*\*
+**Top-5 retrieval accuracy: 100%**
 
 
 
@@ -1420,17 +1420,17 @@ The detailed evaluation is stored in:
 
 ```text
 
-retrieval\_evaluation.csv
+retrieval_evaluation.csv
 
 ```
 
 
 
-\---
+---
 
 
 
-\## 21. Evaluation Artifacts
+## 21. Evaluation Artifacts
 
 
 
@@ -1440,7 +1440,7 @@ The project includes:
 
 ```text
 
-rag\_config.json
+rag_config.json
 
 ```
 
@@ -1452,7 +1452,7 @@ Contains the main RAG configuration.
 
 ```text
 
-retrieval\_evaluation.csv
+retrieval_evaluation.csv
 
 ```
 
@@ -1464,7 +1464,7 @@ Contains the retrieval evaluation results.
 
 ```text
 
-chroma\_db\_v2.zip
+chroma_db_v2.zip
 
 ```
 
@@ -1474,11 +1474,11 @@ Contains the persisted ChromaDB vector store exported from the notebook.
 
 
 
-\---
+---
 
 
 
-\## 22. Notebook
+## 22. Notebook
 
 
 
@@ -1488,7 +1488,7 @@ The complete RAG pipeline is documented in:
 
 ```text
 
-ITI\_Final\_pro\_RAG.ipynb
+ITI_Final_pro_RAG.ipynb
 
 ```
 
@@ -1498,41 +1498,41 @@ The notebook includes:
 
 
 
-1\. Document loading
+1. Document loading
 
-2\. HTML parsing
+2. HTML parsing
 
-3\. Text cleaning
+3. Text cleaning
 
-4\. Chunking
+4. Chunking
 
-5\. Chunking strategy explanation
+5. Chunking strategy explanation
 
-6\. Embedding generation
+6. Embedding generation
 
-7\. ChromaDB creation
+7. ChromaDB creation
 
-8\. Semantic retrieval
+8. Semantic retrieval
 
-9\. Context construction
+9. Context construction
 
-10\. RAG prompt construction
+10. RAG prompt construction
 
-11\. Retrieval testing
+11. Retrieval testing
 
-12\. Evaluation
+12. Evaluation
 
-13\. Configuration export
+13. Configuration export
 
-14\. Vector store export
-
-
-
-\---
+14. Vector store export
 
 
 
-\## 23. Screenshots
+---
+
+
+
+## 23. Screenshots
 
 The frontend was tested with multiple Python questions using the Streamlit interface.
 
@@ -1562,11 +1562,11 @@ The FastAPI backend also validates incoming query requests using Pydantic schema
 
 
 
-\---
+---
 
 
 
-\## 25. Security and Git Hygiene
+## 25. Security and Git Hygiene
 
 
 
@@ -1580,13 +1580,13 @@ The following files are excluded from Git:
 
 .env
 
-\_\_pycache\_\_/
+__pycache__/
 
-\*.pyc
+*.pyc
 
-\*.log
+*.log
 
-.DS\_Store
+.DS_Store
 
 ```
 
@@ -1596,11 +1596,11 @@ The `.env` file must never be committed because it contains local configuration.
 
 
 
-\---
+---
 
 
 
-\## 26. Extended Track / Future Work
+## 26. Extended Track / Future Work
 
 
 
@@ -1616,27 +1616,27 @@ A possible Extended Track implementation is:
 
 User uploads an image
 
-&#x20;       |
+        |
 
-&#x20;       v
+        v
 
 YOLO Object Detection
 
-&#x20;       |
+        |
 
-&#x20;       v
+        v
 
 Detected objects / regions
 
-&#x20;       |
+        |
 
-&#x20;       v
+        v
 
 RAG Retrieval
 
-&#x20;       |
+        |
 
-&#x20;       v
+        v
 
 LLM-generated explanation
 
@@ -1652,31 +1652,31 @@ The current implementation focuses on completing the core RAG pipeline.
 
 
 
-\---
+---
 
 
 
-\## 27. Limitations
+## 27. Limitations
 
 
 
-\* The knowledge base is limited to the selected Python 3.10 Tutorial documents.
+* The knowledge base is limited to the selected Python 3.10 Tutorial documents.
 
-\* Answers depend on the quality of retrieved documentation chunks.
+* Answers depend on the quality of retrieved documentation chunks.
 
-\* The local LLM runs on the available local hardware.
+* The local LLM runs on the available local hardware.
 
-\* The current system focuses on text-based document question answering.
+* The current system focuses on text-based document question answering.
 
-\* The Extended YOLO functionality is planned as an additional extension.
-
-
-
-\---
+* The Extended YOLO functionality is planned as an additional extension.
 
 
 
-\## 28. Project Deliverables
+---
+
+
+
+## 28. Project Deliverables
 
 
 
@@ -1684,37 +1684,37 @@ The final project includes:
 
 
 
-\* RAG notebook
+* RAG notebook
 
-\* Persisted vector database
+* Persisted vector database
 
-\* RAG configuration
+* RAG configuration
 
-\* Retrieval evaluation
+* Retrieval evaluation
 
-\* FastAPI backend
+* FastAPI backend
 
-\* Streamlit frontend
+* Streamlit frontend
 
-\* Backend tests
+* Backend tests
 
-\* Requirements files
+* Requirements files
 
-\* Environment template
+* Environment template
 
-\* Git ignore configuration
+* Git ignore configuration
 
-\* Project documentation
+* Project documentation
 
-\* Screenshots
-
-
-
-\---
+* Screenshots
 
 
 
-\## 29. Conclusion
+---
+
+
+
+## 29. Conclusion
 
 
 
@@ -1726,7 +1726,7 @@ The system combines:
 
 
 
-\*\*Document Processing â†’ Chunking â†’ Embeddings â†’ Vector Search â†’ Context Retrieval â†’ Local LLM Generation â†’ Source-Grounded Answer\*\*
+**Document Processing → Chunking → Embeddings → Vector Search → Context Retrieval → Local LLM Generation → Source-Grounded Answer**
 
 
 
@@ -1734,31 +1734,31 @@ The implementation provides a practical document assistant that can answer Pytho
 
 
 
-\---
+---
 
 
 
-\## 30. Project Information
+## 30. Project Information
 
 
 
-\*\*Training:\*\* ITI Level 2 Summer Training
+**Training:** ITI Level 2 Summer Training
 
 
 
-\*\*Project Type:\*\* RAG-Powered Document Assistant
+**Project Type:** RAG-Powered Document Assistant
 
 
 
-\*\*Domain:\*\* Python Programming
+**Domain:** Python Programming
 
 
 
-\*\*Primary Technologies:\*\* Python, FastAPI, Streamlit, ChromaDB, Sentence Transformers, Ollama, Qwen3
+**Primary Technologies:** Python, FastAPI, Streamlit, ChromaDB, Sentence Transformers, Ollama, Qwen3
 
 
 
-\*\*Retrieval Evaluation:\*\* 100% Top-5 accuracy on 10 evaluation questions
+**Retrieval Evaluation:** 100% Top-5 accuracy on 10 evaluation questions
 
 
 
