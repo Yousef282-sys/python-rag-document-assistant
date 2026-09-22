@@ -1,10 +1,10 @@
 # Python RAG Document Assistant
 
+## 🎥 Project Demo
 
+[▶️ Watch the project demo](demo.mp4)
 
 A Retrieval-Augmented Generation (RAG) document assistant for learning Python using the official Python 3.10 Tutorial as the knowledge base.
-
-
 
 The system retrieves relevant sections from the Python documentation and uses a local Large Language Model (LLM) to generate grounded answers with source references.
 
